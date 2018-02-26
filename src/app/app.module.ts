@@ -14,35 +14,38 @@ import { FuseSampleModule } from './main/content/sample/sample.module';
 import { TranslateModule } from '@ngx-translate/core';
 
 const appRoutes: Routes = [
-    {
-        path      : '**',
-        redirectTo: 'sample'
-    }
+  {
+    path: '',
+    loadChildren: './main/content/events-attributes/events/events.module#EventsModule'
+  },
+  {
+    path: '**',
+    redirectTo: 'sample'
+  }
 ];
 
 @NgModule({
-    declarations: [
-        AppComponent
-    ],
-    imports     : [
-        BrowserModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        RouterModule.forRoot(appRoutes),
-        SharedModule,
-        TranslateModule.forRoot(),
-        FuseMainModule,
-        FuseSampleModule
-    ],
-    providers   : [
-        FuseSplashScreenService,
-        FuseConfigService,
-        FuseNavigationService
-    ],
-    bootstrap   : [
-        AppComponent
-    ]
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes),
+    SharedModule,
+    TranslateModule.forRoot(),
+    FuseMainModule,
+    FuseSampleModule
+  ],
+  providers: [
+    FuseSplashScreenService,
+    FuseConfigService,
+    FuseNavigationService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
-export class AppModule
-{
+export class AppModule {
 }
