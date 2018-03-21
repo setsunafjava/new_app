@@ -12,15 +12,24 @@ import { FuseConfigService } from './core/services/config.service';
 import { FuseNavigationService } from './core/components/navigation/navigation.service';
 import { FuseSampleModule } from './main/content/sample/sample.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { AppService } from './app.service';
 
 const appRoutes: Routes = [
   {
-    path: '',
+    path: 'events-attributes/events/:app/:bundle',
     loadChildren: './main/content/events-attributes/events/events.module#EventsModule'
   },
   {
+    path: 'analytics/acquisition/:app/:bundle',
+    loadChildren: './main/content/analytics/acquisition/acquisition.module#AcquisitionModule'
+  },
+  {
+    path: 'segments/:app/:bundle',
+    loadChildren: './main/content/segments/segments.module#SegmentsModule'
+  },
+  {
     path: '**',
-    redirectTo: 'sample'
+    redirectTo: 'events-attributes/events/1/com.picsart.studio'
   }
 ];
 
@@ -41,7 +50,8 @@ const appRoutes: Routes = [
   providers: [
     FuseSplashScreenService,
     FuseConfigService,
-    FuseNavigationService
+    FuseNavigationService,
+    AppService
   ],
   bootstrap: [
     AppComponent

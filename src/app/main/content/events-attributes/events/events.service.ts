@@ -18,16 +18,16 @@ export class EventsService implements Resolve<any> {
   resolve (route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
     return new Promise((resolve, reject) => {
       Promise.all([
-        this.getEvents()
+        this.getEvents(+route.params['app'])
       ]).then(() => {
         resolve();
       }, reject);
     });
   }
 
-  getEvents (): Promise<any> {
+  getEvents (appId: number): Promise<any> {
     return new Promise((resolve, reject) => {
-      this.http.get('http://picsart.tools:8484/stage/api/v1/apps/1/events')
+      this.http.get(`http://picsart.tools:8484/stage/api/v1/apps/${ appId }/events`)
         .subscribe((res: any) => {
           this.events = res;
           resolve(res);

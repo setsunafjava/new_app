@@ -17,29 +17,28 @@ import { FuseShortcutsModule } from '../core/components/shortcuts/shortcuts.modu
 import { FuseSearchBarModule } from '../core/components/search-bar/search-bar.module';
 
 @NgModule({
-    declarations: [
-        FuseContentComponent,
-        FuseFooterComponent,
-        FuseMainComponent,
-        FuseNavbarVerticalComponent,
-        FuseNavbarHorizontalComponent,
-        FuseToolbarComponent,
-        FuseNavbarVerticalToggleDirective,
-        FuseThemeOptionsComponent,
-        FuseQuickPanelComponent
-    ],
-    imports     : [
-        SharedModule,
-        RouterModule,
-        FuseNavigationModule,
-        FuseShortcutsModule,
-        FuseSearchBarModule
-    ],
-    exports     : [
-        FuseMainComponent
-    ]
+  declarations: [
+    FuseContentComponent,
+    FuseFooterComponent,
+    FuseMainComponent,
+    FuseNavbarVerticalComponent,
+    FuseNavbarHorizontalComponent,
+    FuseToolbarComponent,
+    FuseNavbarVerticalToggleDirective,
+    FuseThemeOptionsComponent,
+    FuseQuickPanelComponent
+  ],
+  imports: [
+    SharedModule,
+    RouterModule,
+    FuseNavigationModule,
+    FuseShortcutsModule,
+    FuseSearchBarModule
+  ],
+  exports: [
+    FuseMainComponent
+  ]
 })
 
-export class FuseMainModule
-{
+export class FuseMainModule {
 }

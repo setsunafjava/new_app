@@ -8,7 +8,10 @@ import { ColorPickerModule } from 'ngx-color-picker';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
-import { FuseMatSidenavHelperDirective, FuseMatSidenavTogglerDirective } from '../directives/fuse-mat-sidenav-helper/fuse-mat-sidenav-helper.directive';
+import {
+  FuseMatSidenavHelperDirective,
+  FuseMatSidenavTogglerDirective
+} from '../directives/fuse-mat-sidenav-helper/fuse-mat-sidenav-helper.directive';
 import { FuseMatSidenavHelperService } from '../directives/fuse-mat-sidenav-helper/fuse-mat-sidenav-helper.service';
 import { FusePipesModule } from '../pipes/pipes.module';
 import { FuseConfirmDialogComponent } from '../components/confirm-dialog/confirm-dialog.component';
@@ -23,63 +26,75 @@ import { FuseTranslationLoaderService } from '../services/translation-loader.ser
 import { CookieService } from 'ngx-cookie-service';
 import { TranslateModule } from '@ngx-translate/core';
 import { ChartsModule } from 'ng2-charts';
+import { ChartModule } from 'angular2-highcharts';
+import { Daterangepicker } from 'ng2-daterangepicker';
+import { DaterangepickerModule } from 'angular-2-daterangepicker';
+
+declare let require: any;
 
 @NgModule({
-    declarations   : [
-        FuseMatSidenavHelperDirective,
-        FuseMatSidenavTogglerDirective,
-        FuseConfirmDialogComponent,
-        FuseCountdownComponent,
-        FuseHighlightComponent,
-        FuseIfOnDomDirective,
-        FusePerfectScrollbarDirective,
-        FuseMaterialColorPickerComponent
-    ],
-    imports        : [
-        FlexLayoutModule,
-        MaterialModule,
-        CommonModule,
-        FormsModule,
-        FusePipesModule,
-        ReactiveFormsModule,
-        ColorPickerModule,
-        NgxDnDModule,
-        NgxDatatableModule,
-        ChartsModule
-    ],
-    exports        : [
-        FlexLayoutModule,
-        MaterialModule,
-        CommonModule,
-        FormsModule,
-        FuseMatSidenavHelperDirective,
-        FuseMatSidenavTogglerDirective,
-        FusePipesModule,
-        FuseCountdownComponent,
-        FuseHighlightComponent,
-        FusePerfectScrollbarDirective,
-        ReactiveFormsModule,
-        ColorPickerModule,
-        NgxDnDModule,
-        NgxDatatableModule,
-        FuseIfOnDomDirective,
-        FuseMaterialColorPickerComponent,
-        TranslateModule,
-        ChartsModule
-    ],
-    entryComponents: [
-        FuseConfirmDialogComponent
-    ],
-    providers      : [
-        CookieService,
-        FuseMatchMedia,
-        FuseNavbarVerticalService,
-        FuseMatSidenavHelperService,
-        FuseTranslationLoaderService
-    ]
+  declarations: [
+    FuseMatSidenavHelperDirective,
+    FuseMatSidenavTogglerDirective,
+    FuseConfirmDialogComponent,
+    FuseCountdownComponent,
+    FuseHighlightComponent,
+    FuseIfOnDomDirective,
+    FusePerfectScrollbarDirective,
+    FuseMaterialColorPickerComponent
+  ],
+  imports: [
+    FlexLayoutModule,
+    MaterialModule,
+    CommonModule,
+    FormsModule,
+    FusePipesModule,
+    ReactiveFormsModule,
+    ColorPickerModule,
+    NgxDnDModule,
+    NgxDatatableModule,
+    ChartModule.forRoot(require('highcharts')),
+    ChartsModule,
+    Daterangepicker,
+    // DaterangePickerModule,
+    // DaterangepickerModule,
+  ],
+  exports: [
+    FlexLayoutModule,
+    MaterialModule,
+    CommonModule,
+    FormsModule,
+    FuseMatSidenavHelperDirective,
+    FuseMatSidenavTogglerDirective,
+    FusePipesModule,
+    FuseCountdownComponent,
+    FuseHighlightComponent,
+    FusePerfectScrollbarDirective,
+    ReactiveFormsModule,
+    ColorPickerModule,
+    NgxDnDModule,
+    NgxDatatableModule,
+    FuseIfOnDomDirective,
+    FuseMaterialColorPickerComponent,
+    TranslateModule,
+    ChartModule,
+    ChartsModule,
+    Daterangepicker,
+    // DaterangePickerModule,
+    // DaterangepickerModule,
+  ],
+  entryComponents: [
+    FuseConfirmDialogComponent
+  ],
+  providers: [
+    CookieService,
+    FuseMatchMedia,
+    FuseNavbarVerticalService,
+    FuseMatSidenavHelperService,
+    FuseTranslationLoaderService
+  ]
 })
 
-export class SharedModule
-{
+export class SharedModule {
 
 }

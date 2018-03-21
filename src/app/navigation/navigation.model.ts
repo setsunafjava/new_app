@@ -24,20 +24,41 @@ export class FuseNavigationModel implements FuseNavigationModelInterface {
               }
             ]
           },
+          // {
+          //   'id': 'analytics',
+          //   'title': 'Analytics',
+          //   'type': 'collapse',
+          //   'icon': 'dashboard',
+          //   'children': [
+          //     {
+          //       'id': 'acquisition',
+          //       'title': 'Acquisition',
+          //       'type': 'item',
+          //       'url': '/analytics/acquisition'
+          //     }
+          //   ]
+          // },
           {
-            'id': 'sample',
-            'title': 'Sample',
-            'translate': 'NAV.SAMPLE.TITLE',
+            'id': 'segments',
+            'title': 'Segments',
             'type': 'item',
-            'icon': 'email',
-            'url': '/sample',
-            'badge': {
-              'title': 25,
-              'translate': 'NAV.SAMPLE.BADGE',
-              'bg': '#F44336',
-              'fg': '#FFFFFF'
-            }
-          }
+            'icon': 'dashboard',
+            'url': '/segments'
+          },
+          // {
+          //   'id': 'sample',
+          //   'title': 'Sample',
+          //   'translate': 'NAV.SAMPLE.TITLE',
+          //   'type': 'item',
+          //   'icon': 'email',
+          //   'url': '/sample',
+          //   'badge': {
+          //     'title': 25,
+          //     'translate': 'NAV.SAMPLE.BADGE',
+          //     'bg': '#F44336',
+          //     'fg': '#FFFFFF'
+          //   }
+          // }
         ]
       }
     ];
